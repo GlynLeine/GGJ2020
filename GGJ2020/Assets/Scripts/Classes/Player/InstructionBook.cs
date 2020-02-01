@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New InstructionBook", menuName = "WizardInc/InstructionBook")]
 class InstructionBook : MonoBehaviour
 {
     [SerializeField]
