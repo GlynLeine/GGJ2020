@@ -1,4 +1,4 @@
-﻿interface IInstructionFactory
+﻿public interface IInstructionFactory
 {
     IInstruction GetInstruction();
 }

@@ -1,7 +1,7 @@
-﻿interface IFactoryDataBase
+﻿public interface IFactoryDataBase
 {
-    void GetRepairableFactory();
-    void GetCursableFactory();
-    void GetCurseFactory();
-    void GetInstructionFactory();
+    IRepairableFactory GetRepairableFactory();
+    ICursablesFactory GetCursableFactory();
+    ICurseFactory GetCurseFactory();
+    IInstructionFactory GetInstructionFactory();
 }
