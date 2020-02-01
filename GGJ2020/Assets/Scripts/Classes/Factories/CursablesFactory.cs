@@ -16,7 +16,7 @@ public class CursablesFactory : ScriptableObject
     public List<Cursable> GetCursables()
     {
         List<Cursable> list = new List<Cursable>();
-
+        list.Add(cursables)
         //return random set of cursables that belong together: Blade, Gaurd, Hilt
         return cursables[Random.Range(0, cursables.Count)];
         //return null;
