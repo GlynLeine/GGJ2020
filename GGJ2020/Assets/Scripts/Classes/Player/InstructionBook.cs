@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class InstructionBook : MonoBehaviour, IInstructionBook
+class InstructionBook : MonoBehaviour
 {
-    public FactoryDatabase db;
+    [SerializeField]
+    private FactoryDatabase db;
+    [SerializeField]
+    private InstructionFactory instructionFactory;
 
     [SerializeField]
-    private List<IInstruction> instructions;
+    private List<Instruction> instructions;
 
     public InstructionBook()
     {
-        instructions = new List<IInstruction>();
+        instructions = new List<Instruction>();
     }
 
     public void AddInstruction()
     {
-        instructions.Add(db.GetComponent<FactoryDatabase>().GetInstructionFactory().GetInstruction());
+        instructions.Add(instructionFactory.GetInstruction());
     }
 
-    public IInstruction GetInstruction(int pageNumber)
+    public Instruction GetInstruction(int pageNumber)
     {
         if (pageNumber >= 0 && pageNumber < instructions.Count)
             return instructions[pageNumber];

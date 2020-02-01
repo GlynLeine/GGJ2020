@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Instruction : ScriptableObject, IInstruction
+public class Instruction : ScriptableObject
 {
     [SerializeField, TextArea]
     private string instructionText;

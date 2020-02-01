@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System;
 
-class PlayerController : MonoBehaviour, IPlayerController
+class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private IPlayerState playerState;
+    private PlayerState playerState;
 
     private Action<Vector2> onClick;
 
@@ -19,12 +19,12 @@ class PlayerController : MonoBehaviour, IPlayerController
         //RayCast into scene and select selectable
     }
 
-    public void OnRepair(IRepairable repairable)
+    public void OnRepair(Repairable repairable)
     {
         //get transaction from repairable and pass it to playerstate
     }
 
-    public void Select(ISelectable selectable)
+    public void Select(Selectable selectable)
     {
         // check if selectable has cursable or spell and change selected items
         // unselect selected items if none apply

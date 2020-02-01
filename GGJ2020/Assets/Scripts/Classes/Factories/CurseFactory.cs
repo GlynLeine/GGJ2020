@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class CurseFactory : ScriptableObject, ICurseFactory
+public class CurseFactory : ScriptableObject
 {
     [SerializeField]
-    private IFactoryDataBase factoryDataBase;
-    [SerializeField]
-    private List<ICurse> curses;
+    private List<Curse> curses;
 
-    public ICurse GetCurse()
+    public Curse GetCurse()
     {
         return curses[Random.Range(0, curses.Count-1)];
     }

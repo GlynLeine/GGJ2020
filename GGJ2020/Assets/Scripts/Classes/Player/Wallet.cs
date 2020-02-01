@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
-public class Wallet : MonoBehaviour, IWallet
+public class Wallet : MonoBehaviour
 {
     [SerializeField]
     private int value;
 
-    public void AddFunds(int amount) 
+    public void AddFunds(int amount)
     {
-        this.value += amount;
+        value += amount;
     }
-    public bool RequestFunds(int amount) 
+    public bool RequestFunds(int amount)
     {
-        return value - amount >= 0;
-    }
-    public int GetFunds(int amount) 
-    { 
-        if(RequestFunds(amount))
+        if (value - amount >= 0)
         {
-            this.value -= amount;
-            return amount;
+            value -= amount;
+            return true;
         }
-
-        return 0;
+        return false;
+    }
+    public int GetFunds()
+    {
+        return value;
     }
 }

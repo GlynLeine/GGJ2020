@@ -1,36 +1,36 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New FactoryDatabase", menuName = "WizardInc/FactoryDatabase")]
-public class FactoryDatabase : ScriptableObject, IFactoryDataBase
+public class FactoryDatabase : ScriptableObject
 {
     [SerializeField]
-    private IRepairableFactory repairableFactory;
+    private RepairableFactory repairableFactory;
 
     [SerializeField]
-    private ICursablesFactory cursableFactory;
+    private CursablesFactory cursableFactory;
 
     [SerializeField]
-    private ICurseFactory curseFactory;
+    private CurseFactory curseFactory;
 
     [SerializeField]
-    private IInstructionFactory instructionFactory;
+    private InstructionFactory instructionFactory;
 
-    public IRepairableFactory GetRepairableFactory()
+    public RepairableFactory GetRepairableFactory()
     {
         return repairableFactory;
     }
 
-    public ICursablesFactory GetCursableFactory()
+    public CursablesFactory GetCursablesFactory()
     {
         return cursableFactory;
     }
 
-    public ICurseFactory GetCurseFactory()
+    public CurseFactory GetCurseFactory()
     {
         return curseFactory;
     }
 
-    public IInstructionFactory GetInstructionFactory()
+    public InstructionFactory GetInstructionFactory()
     {
         return instructionFactory;
     }

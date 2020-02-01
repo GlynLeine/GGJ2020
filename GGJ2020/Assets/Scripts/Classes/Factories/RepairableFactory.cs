@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System;
 
-public class RepairableFactory : ScriptableObject, IRepairableFactory
+public class RepairableFactory : ScriptableObject
 {
     [SerializeField]
-    private IFactoryDataBase factoryDataBase;
-    private ICursablesFactory cursableFactory;
+    private FactoryDatabase factoryDataBase;
+    private CursablesFactory cursableFactory;
     [SerializeField]
-	private Dictionary<string, IRepairable> repairables;
+	private Dictionary<string, Repairable> repairables;
 
 
-    public IRepairable GetRepairable()
+    public Repairable GetRepairable()
     {
-        List<ICursable> cursables = cursableFactory.GetCursablesFactory();
-        IRepairable repairable = repairables[cursables[0].GetRepairableType()];
+        List<Cursable> cursables = cursableFactory.GetCursables();
+        Repairable repairable = repairables[cursables[0].GetRepairableType()];
 
-        return (IRepairable)Activator.CreateInstance(repairable.GetType(), new object[]{cursables});
+        return (Repairable)Activator.CreateInstance(repairable.GetType(), new object[]{cursables});
     }
 }

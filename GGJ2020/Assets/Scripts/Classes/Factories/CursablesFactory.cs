@@ -2,18 +2,18 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New CursablesFactory", menuName = "WizardInc/CursablesFactory")]
-public class CursableFactory : ScriptableObject, ICursablesFactory
+public class CursablesFactory : ScriptableObject
 {
     [SerializeField]
-    private IFactoryDataBase factoryDataBase;
+    private FactoryDatabase factoryDataBase;
 
     [SerializeField]
-    private ICurseFactory curseFactory;
+    private CurseFactory curseFactory;
 
     [SerializeField]
-    private List<ICursable> cursables;
+    private List<Cursable> cursables;
 
-    public List<ICursable> GetCursablesFactory()
+    public List<Cursable> GetCursables()
     {
         //return random set of cursables that belong together
         return null;

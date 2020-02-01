@@ -1,4 +1,0 @@
-﻿interface IInstruction
-{
-    string GetText();
-}

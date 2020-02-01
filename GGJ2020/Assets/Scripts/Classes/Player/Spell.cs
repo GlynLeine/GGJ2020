@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-class Spell : ScriptableObject, ISpell
+public class Spell : ScriptableObject
 {
     [SerializeField]
     private string type;
 
-    string ISpell.GetType()
+    public string GetSpellType()
     {
         return type;
     }

@@ -1,4 +1,6 @@
-﻿public interface ISelectable
+﻿using UnityEngine;
+
+public class Selectable : MonoBehaviour
 {
-    void Select();
+    void Select(){ }
 }

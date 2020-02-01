@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-class Desk : MonoBehaviour, IDesk
+class Desk : MonoBehaviour
 {
-    private IRepairable currentRepairable;
-    private IRepairableFactory repairableFactory;
+    private Repairable currentRepairable;
+    private RepairableFactory repairableFactory;
 
-    public void OnRepair()
+    public void OnRepair(Repairable repairable)
     {
         // Repair the current repairable item
     }

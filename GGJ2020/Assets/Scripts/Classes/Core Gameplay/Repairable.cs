@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Repairable : MonoBehaviour, IRepairable, ISelectable
+public class Repairable : MonoBehaviour
 {
-    private ITransaction transaction;
-    private Action<IRepairable> callback;
-    private List<ICursable> cursables;
+    private Transaction transaction;
+    private Action<Repairable> onRepair;
+    private List<Cursable> cursables;
 
-    public Repairable(ITransaction transaction)
+    public Repairable(Transaction transaction)
     {
         this.transaction = transaction;
-        this.cursables = new List<ICursable>();
+        this.cursables = new List<Cursable>();
     }
 
     public void OnClick()
     {
-        callback?.Invoke(this);
+        onRepair?.Invoke(this);
     }
 
     public void Select()
@@ -25,19 +25,19 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
 
     }
 
-    public bool TryRepair(ISpell spell)
+    public bool TryRepair(Spell spell)
     {
         // TO DO
         return false;
     }
 
-    public void SubscribeToOnRepair(Action<IRepairable> callback)
+    public void SubscribeToOnRepair(Action<Repairable> callback)
     {
-        this.callback = callback;
+        onRepair += callback;
     }
 
-    public ITransaction GetCost(ITransaction transaction)
+    public Transaction GetCost()
     {
-        return this.transaction;
+        return transaction;
     }
 }

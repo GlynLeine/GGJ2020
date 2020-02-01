@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Cursable", menuName = "WizardInc/Curseable")]
-public class Cursable : ScriptableObject, ICursable, ISelectable
+public class Cursable : ScriptableObject
 {
     [SerializeField]
-    private ICurse curse;
+    private Curse curse;
 
     [SerializeField]
     private string repairableType;
@@ -15,12 +15,12 @@ public class Cursable : ScriptableObject, ICursable, ISelectable
         return false;
     }
 
-    public void Select()
+    public string GetRepairableType()
     {
-        //Empty IMplementation
+        return repairableType;
     }
 
-    public bool TryRepair(ISpell spell)
+    public bool TryRepair(Spell spell)
     {
         //Try to repair the obejct that has been cursed
         return false;

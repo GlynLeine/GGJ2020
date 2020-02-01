@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-class Transaction : MonoBehaviour, ITransaction
+public class Transaction : MonoBehaviour
 {
     [SerializeField]
     private int value;

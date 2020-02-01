@@ -2,12 +2,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Spellbook", menuName = "WizardInc/Spellbook")]
-class SpellBook : ScriptableObject, ISpellBook
+class SpellBook : ScriptableObject
 {
     [SerializeField]
-    private List<ISpell> spells;
+    private List<Spell> spells;
 
-    public ISpell RequestSpell(string type)
+    public Spell RequestSpell(string type)
     {
         // Request a spell from this spell book, return it if it is found
 

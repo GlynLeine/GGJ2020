@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-public class PlayerState : MonoBehaviour, IPlayerState
+public class PlayerState : MonoBehaviour
 {
     [SerializeField]
-    private ISpellBook spellBook;
+    private SpellBook spellBook;
     [SerializeField]
-    private IWallet wallet;
+    private Wallet wallet;
     [SerializeField]
-    private IInstructionBook instructionBook;
+    private InstructionBook instructionBook;
 
-    public void MakeTransaction(ITransaction transaction)
+    public void MakeTransaction(Transaction transaction)
     {
         // get value from transaction
         // check if value is negative

@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-class InstructionFactoy : ScriptableObject, IInstructionFactory
+public class InstructionFactory : ScriptableObject
 {
     [SerializeField]
-    List<IInstruction> instructions;
+    List<Instruction> instructions;
 
-    public IInstruction GetInstruction()
+    public Instruction GetInstruction()
     {
         return instructions[Random.Range(0, instructions.Count-1)];
     }

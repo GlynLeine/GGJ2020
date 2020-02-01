@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Curse", menuName = "WizardInc/Curse")]
-public class Curse : ScriptableObject, ICurse, ISelectable
+public class Curse : ScriptableObject
 {
     [SerializeField]
     private string curse;
 
-    public void Select()
+    public bool TryRepair(Spell spell)
     {
-        
-    }
-
-    public bool TryRepair(ISpell spell)
-    {
-        return curse == spell.GetType();
+        return curse == spell.GetSpellType();
     }
 }
