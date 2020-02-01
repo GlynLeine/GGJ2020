@@ -12,6 +12,7 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
     public Repairable(ITransaction transaction)
     {
         this.transaction = transaction;
+        this.cursables = new List<ICursable>();
     }
 
     public void OnClick()
@@ -38,6 +39,6 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
 
     public ITransaction GetCost(ITransaction transaction)
     {
-        return null;
+        return this.transaction;
     }
 }
