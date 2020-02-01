@@ -7,7 +7,7 @@ public class FactoryDatabase : ScriptableObject
     private RepairableFactory repairableFactory;
 
     [SerializeField]
-    private CursablesFactory cursableFactory;
+    private CursableFactory cursableFactory;
 
     [SerializeField]
     private CurseFactory curseFactory;
@@ -20,7 +20,7 @@ public class FactoryDatabase : ScriptableObject
         return repairableFactory;
     }
 
-    public CursablesFactory GetCursablesFactory()
+    public CursableFactory GetCursablesFactory()
     {
         return cursableFactory;
     }

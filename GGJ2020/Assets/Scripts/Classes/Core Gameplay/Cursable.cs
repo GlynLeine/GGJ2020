@@ -1,28 +1,33 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Cursable", menuName = "WizardInc/Curseable")]
-public class Cursable : ScriptableObject
+public class Cursable : MonoBehaviour
 {
     [SerializeField]
     private Curse curse;
 
     [SerializeField]
-    private string repairableType;
+    private Repairable repairable;
+
+
+    public void SetCurse(Curse curse)
+    {
+        this.curse = curse;
+    }
 
     public bool IsCursed()
     {
         //This boolean will add a curse to the object
-        return false;
-    }
-
-    public string GetRepairableType()
-    {
-        return repairableType;
+        return curse != null;
     }
 
     public bool TryRepair(Spell spell)
     {
         //Try to repair the obejct that has been cursed
+        if(curse.TryRepair(spell))
+        {
+            curse = null;
+            return true;
+        }
         return false;
     }
 }

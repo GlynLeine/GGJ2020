@@ -1,22 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System;
 
 [CreateAssetMenu(fileName = "New RepairableFactory", menuName = "WizardInc/RepairableFactory")]
 public class RepairableFactory : ScriptableObject
 {
     [SerializeField]
     private FactoryDatabase factoryDataBase;
-    private CursablesFactory cursableFactory;
-    [SerializeField]
-	private Dictionary<string, Repairable> repairables;
+    private CurseFactory curseFactory;
+    [HideInInspector]
+    public List<string> keys;
+    [HideInInspector]
+    public List<Repairable> repairables;
 
 
     public Repairable GetRepairable()
     {
-        List<Cursable> cursables = cursableFactory.GetCursables();
-        Repairable repairable = repairables[cursables[0].GetRepairableType()];
+        Repairable source = repairables[Random.Range(0, repairables.Count)];
+        Repairable ret = Instantiate(source).GetComponent<Repairable>();
 
-        return (Repairable)Activator.CreateInstance(repairable.GetType(), new object[]{cursables});
+        Cursable[] cursables = ret.GetComponentsInChildren<Cursable>();
+        for (int i = 0; i < cursables.Length; i++)
+        {
+            cursables[i].SetCurse(curseFactory.GetCurse());
+        }
+
+        return ret;
     }
 }
