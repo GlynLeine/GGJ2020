@@ -8,6 +8,7 @@ public class CurseFactory : ScriptableObject
 
     public Curse GetCurse()
     {
-        return curses[Random.Range(0, curses.Count-1)];
+        // It's exlcusive, so curses.Count - 1 actually restricts too much. (might be mistaken)
+        return curses[Random.Range(0, curses.Count)];
     }
 }
