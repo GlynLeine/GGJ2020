@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public interface ICurseablesFactory
+public interface ICursablesFactory
 {
     List<ICursable> GetCursablesFactory();
 }
