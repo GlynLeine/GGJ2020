@@ -1,4 +1,12 @@
-﻿public interface IDesk
+﻿using UnityEngine;
+
+class Desk : MonoBehaviour, IDesk
 {
-    void OnRepair();
+    private IRepairable currentRepairable;
+    private IRepairableFactory repairableFactory;
+
+    public void OnRepair()
+    {
+        // Repair the current repairable item
+    }
 }
