@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class InstructionFactory : ScriptableObject
 {
     [SerializeField]
-    List<Instruction> instructions;
+    private List<Instruction> instructions;
 
     public Instruction GetInstruction()
     {
