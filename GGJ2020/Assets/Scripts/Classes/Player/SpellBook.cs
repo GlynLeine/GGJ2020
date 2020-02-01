@@ -5,12 +5,18 @@ using UnityEngine;
 class SpellBook : ScriptableObject
 {
     [SerializeField]
-    private List<Spell> spells;
+    private Dictionary<string, Spell> spells;
 
     public Spell RequestSpell(string type)
     {
         // Request a spell from this spell book, return it if it is found
-
-        return null;
+        if(spells.ContainsKey(type))
+        {
+            return spells[type];
+        }
+        else
+        {
+            return null;
+        }
     }
 }
