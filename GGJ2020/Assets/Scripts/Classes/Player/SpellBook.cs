@@ -11,12 +11,7 @@ class SpellBook : ScriptableObject
     {
         // Request a spell from this spell book, return it if it is found
         if(spells.ContainsKey(type))
-        {
             return spells[type];
-        }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 }

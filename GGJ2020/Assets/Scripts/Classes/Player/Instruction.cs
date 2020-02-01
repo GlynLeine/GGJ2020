@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Instructions", menuName = "WizardInc/Instructions")]
+[CreateAssetMenu(fileName = "New Instruction", menuName = "WizardInc/Instruction")]
 public class Instruction : ScriptableObject
 {
     [SerializeField, TextArea]

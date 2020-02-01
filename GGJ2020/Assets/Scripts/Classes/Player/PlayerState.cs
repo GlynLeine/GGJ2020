@@ -13,7 +13,7 @@ public class PlayerState : MonoBehaviour
     {
         int value = transaction.GetValue();
 
-        if(value> 0)
+        if(value > 0)
             wallet.AddFunds(value);
         else
             wallet.RequestFunds(value);
