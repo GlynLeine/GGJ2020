@@ -8,13 +8,13 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
     private ITransaction transaction;
     private Action<IRepairable> callback;
     private List<ICursable> cursables;
-    
+
     public Repairable(ITransaction transaction)
     {
         this.transaction = transaction;
     }
 
-    void OnClick()
+    public void OnClick()
     {
         if (callback != null)
             callback.Invoke(this);
@@ -22,7 +22,7 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
 
     public void Select()
     {
-        
+
     }
 
     public bool TryRepair(ISpell spell)
@@ -38,6 +38,6 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
 
     public ITransaction GetCost(ITransaction transaction)
     {
-        
+        return null;
     }
 }
