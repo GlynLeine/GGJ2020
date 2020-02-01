@@ -9,26 +9,25 @@ public class Repairable : MonoBehaviour
     private Action<Repairable> onRepair;
     private List<Cursable> cursables;
 
-    public Repairable(Transaction transaction)
+    public Repairable(List<Cursable> cursables)
     {
-        this.transaction = transaction;
-        this.cursables = new List<Cursable>();
+        transaction = new Transaction(cursables.Count);
+        this.cursables = cursables;
+        PlayerController.SubscribeToOnClick(OnClick);
     }
 
-    public void OnClick()
+    public void OnClick(Vector2 mousePos)
     {
-        onRepair?.Invoke(this);
-    }
-
-    public void Select()
-    {
-
+        bool isCursed = false;
+        foreach (Cursable cursable in cursables)
+            isCursed = isCursed || cursable.IsCursed();
+        if (!isCursed)
+            onRepair?.Invoke(this);
     }
 
     public bool TryRepair(Spell spell)
     {
-        // TO DO
-        return false;
+        return PlayerController.GetSelectedCursable().TryRepair(spell);
     }
 
     public void SubscribeToOnRepair(Action<Repairable> callback)

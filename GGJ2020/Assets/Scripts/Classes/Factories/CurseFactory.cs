@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[CreateAssetMenu(fileName = "New CurseFactory", menuName = "WizardInc/CurseFactory")]
 public class CurseFactory : ScriptableObject
 {
     [SerializeField]

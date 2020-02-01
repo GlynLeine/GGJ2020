@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[CreateAssetMenu(fileName = "New InstructionFactory", menuName = "WizardInc/InstructionFactory")]
 public class InstructionFactory : ScriptableObject
 {
     [SerializeField]
-    List<Instruction> instructions;
+    private List<Instruction> instructions;
 
     public Instruction GetInstruction()
     {
-        return instructions[Random.Range(0, instructions.Count-1)];
+        return instructions[Random.Range(0, instructions.Count)];
     }
 }
 
