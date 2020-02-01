@@ -1,5 +1,4 @@
-﻿
-interface IInstructionFactory
+﻿interface IInstructionFactory
 {
     IInstruction GetInstruction();
 }

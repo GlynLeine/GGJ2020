@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface ICurse
+﻿public interface ICurse
 {
     bool TryRepair(ISpell spell);
 }

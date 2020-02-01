@@ -1,5 +1,4 @@
-﻿
-interface IInstructionBook
+﻿interface IInstructionBook
 {
     void AddInstruction();
     IInstruction GetInstruction(int pageNumber);

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IDesk
+﻿public interface IDesk
 {
-    public void OnRepair();
+    void OnRepair();
 }

@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface ICursable
+﻿public interface ICursable
 {
-    public bool IsCursed();
-    public bool TryRepair(ISpell spell);
+    bool IsCursed();
+    bool TryRepair(ISpell spell);
 }
