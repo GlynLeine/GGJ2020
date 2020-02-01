@@ -4,4 +4,5 @@
     void GetCursableFactory();
     void GetCurseFactory();
     void GetInstructionFactory();
+    //test
 }
