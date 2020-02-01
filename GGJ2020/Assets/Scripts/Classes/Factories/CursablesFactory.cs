@@ -5,17 +5,18 @@ using UnityEngine;
 public class CursablesFactory : ScriptableObject
 {
     [SerializeField]
+    private Dictionary<int, List<Cursable>> sets;
+
+    [SerializeField]
     private FactoryDatabase factoryDataBase;
 
     [SerializeField]
     private CurseFactory curseFactory;
 
-    [SerializeField]
-    private List<Cursable> cursables;
-
     public List<Cursable> GetCursables()
     {
-        //return random set of cursables that belong together
-        return null;
+        // TO DO: Write cursing logics like, somewhere. I don't really care. As long as it happens
+
+        return sets[Random.Range(0, sets.Count)];
     }
 }

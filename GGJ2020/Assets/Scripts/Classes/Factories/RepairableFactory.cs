@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 
+[CreateAssetMenu(fileName = "New RepairableFactory", menuName = "WizardInc/RepairableFactory")]
 public class RepairableFactory : ScriptableObject
 {
     [SerializeField]

@@ -51,9 +51,7 @@ class PlayerController : MonoBehaviour
     {
         Cursable cursable = selectable.GetComponent<CursableContainer>()?.cursable;
         if (cursable != null)
-        {
             selectedCursable = cursable;
-        }
         else
         {
             Spell spell = selectable.GetComponent<Spell>();
