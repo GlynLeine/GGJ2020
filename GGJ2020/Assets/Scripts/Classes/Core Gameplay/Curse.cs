@@ -6,10 +6,10 @@ using UnityEngine;
 public class Curse : ScriptableObject
 {
     [SerializeField]
-    private string curse;
+    private string requiredSpell;
 
     public bool TryRepair(Spell spell)
     {
-        return curse == spell.GetSpellType();
+        return requiredSpell == spell.GetSpellType();
     }
 }
