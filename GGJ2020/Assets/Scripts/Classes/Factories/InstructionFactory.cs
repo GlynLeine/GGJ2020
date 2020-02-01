@@ -1,0 +1,5 @@
+﻿interface IInstructionFactory
+{
+    IInstruction GetInstruction();
+}
+
