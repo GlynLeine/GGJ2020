@@ -11,8 +11,11 @@ public class PlayerState : MonoBehaviour
 
     public void MakeTransaction(Transaction transaction)
     {
-        // get value from transaction
-        // check if value is negative
-        // add or request funds
+        int value = transaction.GetValue();
+
+        if(value> 0)
+            wallet.AddFunds(value);
+        else
+            wallet.RequestFunds(value);
     }
 }
