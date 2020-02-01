@@ -1,6 +1,6 @@
-﻿public interface IWallet
+﻿public class Wallet : IWallet
 {
-    void AddFunds();
-    bool RequestFunds(int amount);
-    int GetFunds();
+    public void AddFunds() { }
+    public bool RequestFunds(int amount) { return false; }
+    public int GetFunds() { return 0; }
 }
