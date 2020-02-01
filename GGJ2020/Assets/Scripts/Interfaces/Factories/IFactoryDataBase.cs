@@ -1,4 +1,4 @@
-﻿interface IFactoryDataBase
+﻿public interface IFactoryDataBase
 {
     void GetRepairableFactory();
     void GetCursableFactory();

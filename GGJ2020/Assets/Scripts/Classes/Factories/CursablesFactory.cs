@@ -2,5 +2,5 @@
 
 public interface ICursablesFactory
 {
-    List<ICursable> GetCursablesFactory();
+    List<ICursable> GetCursables();
 }
