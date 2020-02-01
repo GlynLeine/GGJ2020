@@ -7,6 +7,10 @@ class Desk : MonoBehaviour
 
     public void OnRepair(Repairable repairable)
     {
-        // Repair the current repairable item
+        if (currentRepairable != null)
+            DestroyImmediate(currentRepairable);
+
+        currentRepairable = repairableFactory.GetRepairable();
+        currentRepairable.SubscribeToOnRepair(OnRepair);
     }
 }
