@@ -1,5 +1,14 @@
-﻿interface IInstructionFactory
+﻿using UnityEngine;
+using System.Collections.Generic;
+
+class InstructionFactoy : ScriptableObject, IInstructionFactory
 {
-    IInstruction GetInstruction();
+    [SerializeField]
+    List<IInstruction> instructions;
+
+    public IInstruction GetInstruction()
+    {
+        return instructions[Random.Range(0, instructions.Count-1)];
+    }
 }
 

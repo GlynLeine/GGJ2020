@@ -1,4 +1,12 @@
-﻿interface IInstruction
+﻿using UnityEngine;
+
+public class Instruction : ScriptableObject, IInstruction
 {
-    string GetText();
+    [SerializeField, TextArea]
+    private string instructionText;
+
+    public string GetText()
+    {
+        return instructionText;
+    }
 }

@@ -17,8 +17,7 @@ public class Repairable : MonoBehaviour, IRepairable, ISelectable
 
     public void OnClick()
     {
-        if (callback != null)
-            callback.Invoke(this);
+        callback?.Invoke(this);
     }
 
     public void Select()
