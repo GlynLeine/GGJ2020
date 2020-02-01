@@ -6,8 +6,7 @@ using UnityEngine;
 class InstructionBook : MonoBehaviour
 {
     [SerializeField]
-    private FactoryDatabase db;
-    [SerializeField]
+    private FactoryDatabase factoryDatabase;
     private InstructionFactory instructionFactory;
 
     [SerializeField]
