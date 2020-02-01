@@ -1,4 +1,12 @@
-﻿public interface ITransaction
+﻿using UnityEngine;
+
+class Transaction : MonoBehaviour, ITransaction
 {
-    int GetValue();
+    [SerializeField]
+    private int value;
+
+    public int GetValue()
+    {
+        return value;
+    }
 }

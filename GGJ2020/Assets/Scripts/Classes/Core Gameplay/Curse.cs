@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Curse", menuName = "WizardInc/Curse")]
 public class Curse : ScriptableObject, ICurse, ISelectable
 {
     [SerializeField]

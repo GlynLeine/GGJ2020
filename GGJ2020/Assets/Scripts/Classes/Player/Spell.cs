@@ -1,4 +1,12 @@
-﻿public interface ISpell
+﻿using UnityEngine;
+
+class Spell : ScriptableObject, ISpell
 {
-    string GetType();
+    [SerializeField]
+    private string type;
+
+    string ISpell.GetType()
+    {
+        return type;
+    }
 }
