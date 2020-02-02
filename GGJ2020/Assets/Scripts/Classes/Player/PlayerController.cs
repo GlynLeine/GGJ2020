@@ -32,11 +32,13 @@ class PlayerController : MonoBehaviour
 
     public void OnClick(Vector2 mousePos)
     {
-        Collider2D hit = Physics2D.OverlapPoint(mousePos);
+        Vector2 rayCastOrigin = Camera.main.ScreenToWorldPoint(mousePos);
+        Collider2D hit = Physics2D.OverlapPoint(rayCastOrigin);
 
         if (hit != null)
         {
             Selectable selectable = hit.transform.GetComponent<Selectable>();
+            Debug.Log(selectable);
             if (selectable != null)
                 Select(selectable);
         }
@@ -54,7 +56,7 @@ class PlayerController : MonoBehaviour
             selectedCursable = cursable;
         else
         {
-            Spell spell = selectable.GetComponent<Spell>();
+            Spell spell = selectable.GetComponent<SpellContainer>()?.spell;
             if (spell != null)
                 selectedSpell = spell;
             else

@@ -8,10 +8,14 @@ public class Cursable : MonoBehaviour
     [SerializeField]
     private Repairable repairable;
 
+    private Material defaultMat;
+
 
     public void SetCurse(Curse curse)
     {
         this.curse = curse;
+        defaultMat = GetComponent<Renderer>().sharedMaterial;
+        GetComponent<Renderer>().sharedMaterial = curse.GetMaterial();
     }
 
     public bool IsCursed()
@@ -26,6 +30,7 @@ public class Cursable : MonoBehaviour
         if(curse.TryRepair(spell))
         {
             curse = null;
+            GetComponent<Renderer>().sharedMaterial = defaultMat;
             return true;
         }
         return false;

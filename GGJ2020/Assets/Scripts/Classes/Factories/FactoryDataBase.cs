@@ -7,9 +7,6 @@ public class FactoryDatabase : ScriptableObject
     private RepairableFactory repairableFactory;
 
     [SerializeField]
-    private CursableFactory cursableFactory;
-
-    [SerializeField]
     private CurseFactory curseFactory;
 
     [SerializeField]
@@ -18,11 +15,6 @@ public class FactoryDatabase : ScriptableObject
     public RepairableFactory GetRepairableFactory()
     {
         return repairableFactory;
-    }
-
-    public CursableFactory GetCursablesFactory()
-    {
-        return cursableFactory;
     }
 
     public CurseFactory GetCurseFactory()
