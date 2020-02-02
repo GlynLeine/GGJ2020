@@ -4,10 +4,10 @@
 public class Spell : ScriptableObject
 {
     [SerializeField]
-    private string type;
+    private string keyWord;
 
-    public string GetSpellType()
+    public string GetKeyWord()
     {
-        return type;
+        return keyWord;
     }
 }

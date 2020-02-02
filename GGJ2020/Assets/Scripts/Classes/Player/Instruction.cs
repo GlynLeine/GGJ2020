@@ -1,10 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System;
 
-[CreateAssetMenu(fileName = "New Instruction", menuName = "WizardInc/Instruction")]
-public class Instruction : ScriptableObject
+public class Instruction
 {
-    [SerializeField, TextArea]
     private string instructionText;
+
+    public Instruction(string baseText, Spell spell, Repairable repairable, List<Tuple<Cursable, Curse>> curses)
+    {
+       // "SomeText <SpellWord> some more text <repairable> some more <curse0> blah <curse1> blah <curse2>"
+
+        if(curses.Count == 1)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
 
     public string GetText()
     {

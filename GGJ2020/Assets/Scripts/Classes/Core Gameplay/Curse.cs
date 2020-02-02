@@ -6,18 +6,33 @@ using UnityEngine;
 public class Curse : ScriptableObject
 {
     [SerializeField]
-    private Spell requiredSpell;
-
-    [SerializeField]
     private Material material;
 
-    public bool TryRepair(Spell spell)
-    {
-        return requiredSpell.GetSpellType() == spell.GetSpellType();
-    }
+    [SerializeField]
+    private AudioClip curseClip;
+    [SerializeField]
+    private AudioClip repairClip;
+
+    [SerializeField]
+    string keyWord;
 
     public Material GetMaterial()
     {
         return material;
+    }
+
+    public AudioClip GetCurseClip()
+    {
+        return curseClip;
+    }
+    
+    public AudioClip GetRepairClip()
+    {
+        return repairClip;
+    }
+
+    public string GetKeyWord()
+    {
+        return keyWord;
     }
 }

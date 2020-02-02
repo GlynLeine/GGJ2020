@@ -67,7 +67,7 @@ class PlayerController : MonoBehaviour
         }
 
         if (selectedCursable != null && selectedSpell != null)
-            selectedCursable.TryRepair(selectedSpell);
+            playerState.TryRepair(selectedSpell, selectedCursable.GetRepairable());
     }
 
     public static void SubscribeToOnClick(Action<Vector2> callback)
