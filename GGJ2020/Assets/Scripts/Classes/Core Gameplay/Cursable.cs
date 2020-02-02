@@ -9,6 +9,9 @@ public class Cursable : MonoBehaviour
     [SerializeField]
     private Repairable repairable;
 
+    [SerializeField]
+    private string keyWord;
+
     private Material defaultMat;
 
     public UnityEvent OnRepair;
@@ -20,22 +23,26 @@ public class Cursable : MonoBehaviour
         GetComponent<Renderer>().sharedMaterial = curse.GetMaterial();
     }
 
+    public string GetKeyString()
+    {
+        return keyWord;
+    }
+
     public bool IsCursed()
     {
         //This boolean will add a curse to the object
         return curse != null;
     }
 
-    public bool TryRepair(Spell spell)
+    public Repairable GetRepairable()
     {
-        //Try to repair the obejct that has been cursed
-        if(curse.TryRepair(spell))
-        {
-            OnRepair?.Invoke();
-            curse = null;
-            GetComponent<Renderer>().sharedMaterial = defaultMat;
-            return true;
-        }
-        return false;
+        return transform.parent.GetComponent<Repairable>();
+    }
+
+    public void Repairable()
+    {
+        OnRepair?.Invoke();
+        curse = null;
+        GetComponent<Renderer>().sharedMaterial = defaultMat;
     }
 }

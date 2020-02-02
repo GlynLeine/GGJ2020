@@ -14,7 +14,7 @@ public class InstructionFactory : ScriptableObject
 
     public Instruction GetInstruction()
     {
-        return new Instruction();
+        return null;// new Instruction();
     }
 }
 
