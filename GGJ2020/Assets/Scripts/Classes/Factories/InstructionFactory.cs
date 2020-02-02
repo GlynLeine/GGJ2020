@@ -14,7 +14,6 @@ public class InstructionFactory : ScriptableObject
     [TextArea, SerializeField]
     private List<string> baseTexts;
 
-
     public Instruction GetInstruction(int curseCount)
     {
         curseCount = Mathf.Max(1, curseCount);

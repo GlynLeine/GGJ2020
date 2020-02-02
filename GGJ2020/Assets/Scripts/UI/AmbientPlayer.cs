@@ -27,6 +27,7 @@ public class AmbientPlayer : MonoBehaviour
         if (timer > 40)
         {
             timer = 0;
+            phonePlayed = false;
         }
     }
 }
