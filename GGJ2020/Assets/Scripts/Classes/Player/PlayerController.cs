@@ -17,7 +17,7 @@ class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(FindObjectsOfType<PlayerController>().Length > 1)
+        if (FindObjectsOfType<PlayerController>().Length > 1)
             DestroyImmediate(gameObject);
 
         DontDestroyOnLoad(gameObject);
@@ -42,7 +42,10 @@ class PlayerController : MonoBehaviour
             Selectable selectable = hit.transform.GetComponent<Selectable>();
             Debug.Log(selectable);
             if (selectable != null)
+            {
+                selectable.Select();
                 Select(selectable);
+            }
         }
     }
 
