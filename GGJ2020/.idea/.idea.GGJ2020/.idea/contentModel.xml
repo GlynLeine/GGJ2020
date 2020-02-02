@@ -41,11 +41,15 @@
             <e p="RepairableFactoryEditor.cs" t="Include" />
           </e>
           <e p="Misc" t="Include">
+            <e p="daytimer.cs" t="Include" />
+            <e p="EndOfDay.cs" t="Include" />
+            <e p="flame.cs" t="Include" />
             <e p="levitate.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="AmbientPlayer.cs" t="Include" />
             <e p="CloseGameButton.cs" t="Include" />
+            <e p="Page.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

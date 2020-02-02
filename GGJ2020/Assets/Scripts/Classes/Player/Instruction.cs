@@ -41,8 +41,6 @@ public class Instruction
         }
 
         instructionText = baseText;
-
-        Debug.Log(instructionText);
     }
 
     public bool Validate(Spell spell, Repairable repairable, List<Tuple<Cursable, Curse>> curses)
