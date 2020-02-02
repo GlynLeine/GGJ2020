@@ -22,8 +22,17 @@ public class InstructionFactory : ScriptableObject
         Repairable repairable = repairables[Random.Range(0, repairables.Count)];
         List<System.Tuple<Cursable, Curse>> curseCombos = new List<System.Tuple<Cursable, Curse>>();
 
-        for(int i = 0; i < repairable.GetCursableCount(); i++)
-            curseCombos.Add(new System.Tuple<Cursable, Curse>(repairable.GetCursable(i), i < curseCount? curses[Random.Range(0, curses.Count)] : null));
+        for (int i = 0; i < repairable.GetCursableCount(); i++)
+            curseCombos.Add(new System.Tuple<Cursable, Curse>(repairable.GetCursable(i), null));
+
+        int comboIndex = Random.Range(0, curseCombos.Count);
+        curseCombos[comboIndex] = new System.Tuple<Cursable, Curse>(curseCombos[comboIndex].Item1, curses[Random.Range(0, curses.Count)]);
+
+        for (int i = 1; i < curseCount; i++)
+        {
+            comboIndex = Random.Range(0, curseCombos.Count);
+            curseCombos[comboIndex] = new System.Tuple<Cursable, Curse>(curseCombos[comboIndex].Item1, curses[Random.Range(0, curses.Count)]);
+        }
 
         string baseText = baseTexts[Random.Range(0, baseTexts.Count)];
 

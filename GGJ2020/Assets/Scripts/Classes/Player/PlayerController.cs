@@ -8,17 +8,19 @@ class PlayerController : MonoBehaviour
 
     private static Action<Vector2> onClick;
 
-    private static Cursable selectedCursable;
     private static Spell selectedSpell;
-
-    public static Cursable GetSelectedCursable()
-    {
-        return selectedCursable;
-    }
 
     public static Spell GetSelectedSpell()
     {
         return selectedSpell;
+    }
+
+    private void Start()
+    {
+        if(FindObjectsOfType<PlayerController>().Length > 1)
+            DestroyImmediate(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -44,11 +46,6 @@ class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnRepair(Repairable repairable)
-    {
-        playerState.MakeTransaction(repairable.GetCost());
-    }
-
     public void Select(Selectable selectable)
     {
         Spell spell = selectable.GetComponent<SpellContainer>()?.spell;
@@ -59,17 +56,25 @@ class PlayerController : MonoBehaviour
         {
             Cursable cursable = selectable.GetComponent<Cursable>();
             if (cursable != null)
-                selectedCursable = cursable;
+            {
+                if (selectedSpell != null)
+                {
+                    if (playerState.TryRepair(selectedSpell, cursable.GetRepairable()))
+                    {
+                        Debug.Log("yay?");
+                    }
+                    else
+                    {
+                        Debug.Log("nay!");
+                    }
+                    Debug.Log(selectedSpell);
+                }
+            }
             else
             {
-                selectedCursable = null;
                 selectedSpell = null;
             }
         }
-
-        if (selectedCursable != null && selectedSpell != null)
-            if(playerState.TryRepair(selectedSpell, selectedCursable.GetRepairable()))
-                Debug.Log("yay?");
     }
 
     public static void SubscribeToOnClick(Action<Vector2> callback)
