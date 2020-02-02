@@ -23,7 +23,7 @@ public class Cursable : MonoBehaviour
         GetComponent<Renderer>().sharedMaterial = curse.GetMaterial();
     }
 
-    public string GetKeyString()
+    public string GetKeyWord()
     {
         return keyWord;
     }
