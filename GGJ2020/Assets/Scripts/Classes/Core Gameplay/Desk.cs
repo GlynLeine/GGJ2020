@@ -13,6 +13,7 @@ class Desk : MonoBehaviour
     private void Start()
     {
         OnRepair(null);
+        Debug.Log("Started scene");
     }
 
     public void OnRepair(Repairable repairable)
