@@ -22,8 +22,6 @@ class Desk : MonoBehaviour
 
     public void OnRepair(Repairable repairable)
     {
-        Debug.Log("New Item");
-
         if (repairableFactory == null)
             repairableFactory = database.GetRepairableFactory();
 
