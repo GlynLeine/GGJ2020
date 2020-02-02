@@ -21,6 +21,6 @@ public class PlayerState : MonoBehaviour
 
     public bool TryRepair(Spell spell, Repairable repairable)
     {
-        return false;
+        return instructionBook.Validate(spell, repairable);
     }
 }
