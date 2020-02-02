@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class Cursable : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Cursable : MonoBehaviour
 
     private Material defaultMat;
 
+    public UnityEvent OnRepair;
 
     public void SetCurse(Curse curse)
     {
@@ -29,6 +31,7 @@ public class Cursable : MonoBehaviour
         //Try to repair the obejct that has been cursed
         if(curse.TryRepair(spell))
         {
+            OnRepair?.Invoke();
             curse = null;
             GetComponent<Renderer>().sharedMaterial = defaultMat;
             return true;

@@ -11,13 +11,28 @@ public class Curse : ScriptableObject
     [SerializeField]
     private Material material;
 
+    [SerializeField]
+    private AudioClip curseClip;
+    [SerializeField]
+    private AudioClip repairClip;
+
     public bool TryRepair(Spell spell)
     {
-        return requiredSpell.GetSpellType() == spell.GetSpellType();
+        return requiredSpell.GetKeyWord() == spell.GetKeyWord();
     }
 
     public Material GetMaterial()
     {
         return material;
+    }
+
+    public AudioClip GetCurseClip()
+    {
+        return curseClip;
+    }
+    
+    public AudioClip GetRepairClip()
+    {
+        return repairClip;
     }
 }

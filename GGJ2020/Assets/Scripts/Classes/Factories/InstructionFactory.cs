@@ -5,11 +5,16 @@ using System.Collections.Generic;
 public class InstructionFactory : ScriptableObject
 {
     [SerializeField]
-    private List<Instruction> instructions;
+    private List<Spell> spells;
+    [SerializeField]
+    private List<Repairable> repairables;
+    [SerializeField]
+    private List<Curse> curses;
+
 
     public Instruction GetInstruction()
     {
-        return instructions[Random.Range(0, instructions.Count)];
+        return new Instruction();
     }
 }
 
