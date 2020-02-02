@@ -25,7 +25,7 @@ public class Wallet : MonoBehaviour
             value -= amount;
             return true;
         }
-        Debug.Log("GameOver");
+
         return false;
     }
 

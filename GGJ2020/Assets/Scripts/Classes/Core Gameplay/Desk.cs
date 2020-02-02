@@ -13,7 +13,7 @@ class Desk : MonoBehaviour
     private Repairable currentRepairable;
     private RepairableFactory repairableFactory;
 
-    private void Start()
+    void OnEnable()
     {
         instructionBook = playerState.GetInstructionBook();
         instructionBook.Init();
