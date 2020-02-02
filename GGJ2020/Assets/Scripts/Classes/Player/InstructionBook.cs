@@ -11,7 +11,7 @@ public class InstructionBook : MonoBehaviour
     [SerializeField]
     private List<Instruction> instructions;
 
-    private void Start()
+    public void Init()
     {
         instructions = new List<Instruction>();
         instructionFactory = factoryDatabase.GetInstructionFactory();
