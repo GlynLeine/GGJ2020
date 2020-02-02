@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class Selectable : MonoBehaviour
 {
-    void Select(){ }
+    public UnityEvent OnSelect;
+
+    public void Select(){ OnSelect?.Invoke(); }
 }

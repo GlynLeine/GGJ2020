@@ -12,6 +12,7 @@ public class Cursable : MonoBehaviour
     [SerializeField]
     private string keyWord;
 
+    [SerializeField]
     private Material defaultMat;
 
     public void SetCurse(Curse curse)
@@ -20,7 +21,6 @@ public class Cursable : MonoBehaviour
         if(curse == null)
             return;
 
-        defaultMat = GetComponent<Renderer>().sharedMaterial;
         GetComponent<Renderer>().sharedMaterial = curse.GetMaterial();
     }
 
