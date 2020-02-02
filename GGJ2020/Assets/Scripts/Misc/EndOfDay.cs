@@ -9,7 +9,16 @@ public class EndOfDay : MonoBehaviour
     Wallet wallet;
 
     [SerializeField]
+    List<string> causes;
+
+    [SerializeField]
     private TMPro.TMP_Text currentMoney;
+    [SerializeField]
+    private TMPro.TMP_Text lostMoney;
+    [SerializeField]
+    private TMPro.TMP_Text youWon;
+    [SerializeField]
+    private TMPro.TMP_Text youLost;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +26,20 @@ public class EndOfDay : MonoBehaviour
         player = GameObject.Find("Player");
         wallet = player.GetComponent<Wallet>();
 
-        if(wallet.GetFunds() < 0)
+        for(int i = 0; i < 3; i++)
         {
-            Debug.Log("LOST GAME");
+            int cost = Random.Range(0, 30);
+
+            lostMoney.text += causes[Random.Range(0, causes.Count)] + " " + cost + " ";
+            wallet.RequestFunds(cost);
         }
 
-        currentMoney.text += wallet.GetFunds();
+        if(wallet.GetFunds() <= 0)
+        {
+            youLost.enabled = true;
+        }
+
+        currentMoney.text += wallet.GetFunds() == 0 ? 0 : wallet.GetFunds();
 
     }
 
@@ -35,7 +52,7 @@ public class EndOfDay : MonoBehaviour
     public void BecomeCEO()
     {
         if (wallet.RequestFunds(1000))
-            Debug.Log("YOU WON");
+            youWon.enabled = true;
     }
 
     public void StartNewDay()
