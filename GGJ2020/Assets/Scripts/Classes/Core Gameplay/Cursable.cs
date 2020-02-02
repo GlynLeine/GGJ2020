@@ -23,6 +23,11 @@ public class Cursable : MonoBehaviour
         GetComponent<Renderer>().sharedMaterial = curse.GetMaterial();
     }
 
+    public Curse GetCurse()
+    {
+        return curse;
+    }
+
     public string GetKeyString()
     {
         return keyWord;
@@ -39,7 +44,7 @@ public class Cursable : MonoBehaviour
         return transform.parent.GetComponent<Repairable>();
     }
 
-    public void Repairable()
+    public void Repair()
     {
         OnRepair?.Invoke();
         curse = null;
