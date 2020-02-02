@@ -140,8 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9354c832c59654094b0660948e5e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursables: []
-  keyWord: 
 --- !u!1 &8487326422089732847
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +235,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 0}
-  keyWord: 
 --- !u!1 &8898658198756108506
 GameObject:
   m_ObjectHideFlags: 0
