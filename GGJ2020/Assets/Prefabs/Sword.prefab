@@ -97,6 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 6722508327617600218}
+  OnRepair:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!60 &3425595208654651901
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -248,6 +251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 6722508327617600218}
+  OnRepair:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!60 &740709666321667866
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -464,6 +470,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 6722508327617600218}
+  OnRepair:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8898658198756108506}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!60 &2626384257544324019
 PolygonCollider2D:
   m_ObjectHideFlags: 0
