@@ -18,4 +18,9 @@ public class PlayerState : MonoBehaviour
         else
             wallet.RequestFunds(value);
     }
+
+    public bool TryRepair(Spell spell, Repairable repairable)
+    {
+        return instructionBook.Validate(spell, repairable);
+    }
 }

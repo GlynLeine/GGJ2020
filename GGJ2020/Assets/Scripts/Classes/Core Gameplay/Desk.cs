@@ -11,13 +11,15 @@ class Desk : MonoBehaviour
     private void Start()
     {
         OnRepair(null);
-        repairableFactory = database.GetRepairableFactory();
     }
 
     public void OnRepair(Repairable repairable)
     {
+        if (repairableFactory == null)
+            repairableFactory = database.GetRepairableFactory();
+
         if (currentRepairable != null)
-            DestroyImmediate(currentRepairable);
+            Destroy(currentRepairable);
 
         currentRepairable = repairableFactory.GetRepairable();
         currentRepairable.SubscribeToOnRepair(OnRepair);

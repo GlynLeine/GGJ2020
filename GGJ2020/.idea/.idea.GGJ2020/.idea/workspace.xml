@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9b339d6-0fd8-4e82-9451-d6df843d35dc" name="Default Changelist" comment="" />
+    <list default="true" id="a9b339d6-0fd8-4e82-9451-d6df843d35dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2020/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2020/riderModule.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,14 +14,17 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/CloseGameButton.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/AmbientPlayer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding>
-                <marker date="1580590375407" expanded="false" signature="6:78" ph="..." />
-                <marker date="1580590375407" expanded="true" signature="124:196" ph="{...}" />
-                <marker date="1580590375407" expanded="true" signature="154:194" ph="{...}" />
+                <marker date="1580621187183" expanded="true" signature="6:92" ph="..." />
+                <marker date="1580621187183" expanded="true" signature="136:595" ph="{...}" />
+                <marker date="1580621187183" expanded="true" signature="277:289" ph="{...}" />
+                <marker date="1580621187183" expanded="true" signature="347:593" ph="{...}" />
+                <marker date="1580621187183" expanded="true" signature="433:519" ph="{...}" />
+                <marker date="1580621187183" expanded="true" signature="544:587" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -30,23 +36,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CloseGameButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AmbientPlayer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CloseGameButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AmbientPlayer.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
-        <option value="$PROJECT_DIR$/.idea/.idea.GGJ2020/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/.idea.GGJ2020/.idea/indexLayout.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
     <option name="y" value="127" />
     <option name="width" value="1440" />
@@ -116,12 +123,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580590334044</updated>
-      <workItem from="1580590342281" duration="648000" />
+      <workItem from="1580590342281" duration="1976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="648000" />
+    <option name="totallyTimeSpent" value="1976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -183,10 +190,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/AmbientPlayer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
-            <marker date="1580590375407" expanded="false" signature="6:78" ph="..." />
-            <marker date="1580590375407" expanded="true" signature="124:196" ph="{...}" />
-            <marker date="1580590375407" expanded="true" signature="154:194" ph="{...}" />
+            <marker date="1580621187183" expanded="true" signature="6:92" ph="..." />
+            <marker date="1580621187183" expanded="true" signature="136:595" ph="{...}" />
+            <marker date="1580621187183" expanded="true" signature="277:289" ph="{...}" />
+            <marker date="1580621187183" expanded="true" signature="347:593" ph="{...}" />
+            <marker date="1580621187183" expanded="true" signature="433:519" ph="{...}" />
+            <marker date="1580621187183" expanded="true" signature="544:587" ph="{...}" />
           </folding>
         </state>
       </provider>

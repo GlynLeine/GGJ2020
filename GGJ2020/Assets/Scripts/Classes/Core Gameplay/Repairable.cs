@@ -9,6 +9,9 @@ public class Repairable : MonoBehaviour
     private Action<Repairable> onRepair;
     private List<Cursable> cursables;
 
+    [SerializeField]
+    private string keyWord;
+
     public Repairable(List<Cursable> cursables)
     {
         transaction = new Transaction(cursables.Count);
@@ -25,9 +28,9 @@ public class Repairable : MonoBehaviour
             onRepair?.Invoke(this);
     }
 
-    public bool TryRepair(Spell spell)
+    public string GetKeyWord()
     {
-        return PlayerController.GetSelectedCursable().TryRepair(spell);
+        return keyWord;
     }
 
     public void SubscribeToOnRepair(Action<Repairable> callback)

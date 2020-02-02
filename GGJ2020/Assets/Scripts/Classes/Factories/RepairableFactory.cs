@@ -15,6 +15,8 @@ public class RepairableFactory : ScriptableObject
 
     public Repairable GetRepairable()
     {
+        if (curseFactory == null)
+            curseFactory = factoryDataBase.GetCurseFactory();
         Repairable source = repairables[Random.Range(0, repairables.Count)];
         Repairable ret = Instantiate(source).GetComponent<Repairable>();
 
