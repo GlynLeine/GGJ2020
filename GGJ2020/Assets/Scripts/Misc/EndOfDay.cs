@@ -8,6 +8,9 @@ public class EndOfDay : MonoBehaviour
     GameObject player;
     Wallet wallet;
 
+    [SerializeField]
+    private TMPro.TMP_Text currentMoney;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,9 @@ public class EndOfDay : MonoBehaviour
         {
             Debug.Log("LOST GAME");
         }
+
+        currentMoney.text += wallet.GetFunds();
+
     }
 
     // Update is called once per frame
