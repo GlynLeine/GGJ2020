@@ -27,4 +27,28 @@ class InstructionBook : MonoBehaviour
             return instructions[pageNumber];
         return null;
     }
+
+    public bool Validate(Spell spell, Repairable repairable)
+    {
+        List<Tuple<Cursable, Curse>> cursableCombos = new List<Tuple<Cursable, Curse>>();
+
+        Cursable[] cursables = repairable.GetComponentsInChildren<Cursable>();
+        for (int i = 0; i < cursables.Length; i++)
+        {
+            cursableCombos.Add(new Tuple<Cursable, Curse>(cursables[i], cursables[i].GetCurse()));
+        }
+
+        foreach (Instruction instruction in instructions)
+        {
+            if (instruction.Validate(spell, repairable, cursableCombos))
+            {
+                foreach(Tuple<Cursable, Curse> combo in cursableCombos)
+                {
+                    combo.Item1.Repair();
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 }
