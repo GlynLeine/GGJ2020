@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 class Desk : MonoBehaviour
 {
@@ -17,7 +18,6 @@ class Desk : MonoBehaviour
         instructionBook = playerState.GetInstructionBook();
         instructionBook.Init();
         OnRepair(null);
-        Debug.Log("Started scene");
     }
 
     public void OnRepair(Repairable repairable)
