@@ -17,6 +17,7 @@ class Desk : MonoBehaviour
         instructionBook = playerState.GetInstructionBook();
         instructionBook.Init();
         OnRepair(null);
+        Debug.Log("Started scene");
     }
 
     public void OnRepair(Repairable repairable)
