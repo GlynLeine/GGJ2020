@@ -3,8 +3,6 @@
 public class PlayerState : MonoBehaviour
 {
     [SerializeField]
-    private SpellBook spellBook;
-    [SerializeField]
     private Wallet wallet;
     [SerializeField]
     private InstructionBook instructionBook;

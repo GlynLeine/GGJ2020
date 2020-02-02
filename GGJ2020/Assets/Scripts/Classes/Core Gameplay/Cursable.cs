@@ -14,11 +14,12 @@ public class Cursable : MonoBehaviour
 
     private Material defaultMat;
 
-    public UnityEvent OnRepair;
-
     public void SetCurse(Curse curse)
     {
         this.curse = curse;
+        if(curse == null)
+            return;
+
         defaultMat = GetComponent<Renderer>().sharedMaterial;
         GetComponent<Renderer>().sharedMaterial = curse.GetMaterial();
     }
@@ -46,7 +47,6 @@ public class Cursable : MonoBehaviour
 
     public void Repair()
     {
-        OnRepair?.Invoke();
         curse = null;
         GetComponent<Renderer>().sharedMaterial = defaultMat;
     }

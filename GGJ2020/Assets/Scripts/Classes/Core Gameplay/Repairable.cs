@@ -7,25 +7,32 @@ public class Repairable : MonoBehaviour
 {
     private Transaction transaction;
     private Action<Repairable> onRepair;
+    [SerializeField]
     private List<Cursable> cursables;
 
     [SerializeField]
     private string keyWord;
 
-    public Repairable(List<Cursable> cursables)
+    private void Start()
     {
         transaction = new Transaction(cursables.Count);
-        this.cursables = cursables;
-        PlayerController.SubscribeToOnClick(OnClick);
     }
 
-    public void OnClick(Vector2 mousePos)
+    public void Repair()
     {
-        bool isCursed = false;
-        foreach (Cursable cursable in cursables)
-            isCursed = isCursed || cursable.IsCursed();
-        if (!isCursed)
-            onRepair?.Invoke(this);
+        foreach(Cursable cursable in cursables)
+            cursable.Repair();
+        onRepair?.Invoke(this);
+    }
+
+    public int GetCursableCount()
+    {
+        return cursables.Count;
+    }
+
+    public Cursable GetCursable(int index)
+    {
+        return cursables[index];
     }
 
     public string GetKeyWord()

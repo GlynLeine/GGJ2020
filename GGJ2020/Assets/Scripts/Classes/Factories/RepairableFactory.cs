@@ -13,18 +13,25 @@ public class RepairableFactory : ScriptableObject
     public List<Repairable> repairables;
 
 
-    public Repairable GetRepairable()
+    public Repairable GetRepairable(InstructionBook instructionBook)
     {
         if (curseFactory == null)
             curseFactory = factoryDataBase.GetCurseFactory();
+
         Repairable source = repairables[Random.Range(0, repairables.Count)];
         Repairable ret = Instantiate(source).GetComponent<Repairable>();
 
+        Instruction instruction = instructionBook.GetInstruction(Random.Range(0, instructionBook.GetPageCount()));
+
+        List<System.Tuple<Cursable, Curse>> combos = instruction.GetCombos();
+
         Cursable[] cursables = ret.GetComponentsInChildren<Cursable>();
         for (int i = 0; i < cursables.Length; i++)
-        {
-            cursables[i].SetCurse(curseFactory.GetCurse());
-        }
+            foreach (System.Tuple<Cursable, Curse> combo in combos)
+            {
+                if(cursables[i].GetKeyWord() == combo.Item1.GetKeyWord())
+                    cursables[i].SetCurse(combo.Item2);
+            }
 
         return ret;
     }

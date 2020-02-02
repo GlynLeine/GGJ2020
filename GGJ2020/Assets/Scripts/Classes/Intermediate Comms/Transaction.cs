@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-public class Transaction : MonoBehaviour
+﻿
+public class Transaction
 {
-    [SerializeField]
     private int value;
 
     public Transaction(int value)

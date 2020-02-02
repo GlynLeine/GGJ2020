@@ -51,14 +51,15 @@ class PlayerController : MonoBehaviour
 
     public void Select(Selectable selectable)
     {
-        Cursable cursable = selectable.GetComponent<CursableContainer>()?.cursable;
-        if (cursable != null)
-            selectedCursable = cursable;
+        Spell spell = selectable.GetComponent<SpellContainer>()?.spell;
+
+        if (spell != null)
+            selectedSpell = spell;
         else
         {
-            Spell spell = selectable.GetComponent<SpellContainer>()?.spell;
-            if (spell != null)
-                selectedSpell = spell;
+            Cursable cursable = selectable.GetComponent<Cursable>();
+            if (cursable != null)
+                selectedCursable = cursable;
             else
             {
                 selectedCursable = null;
@@ -67,7 +68,8 @@ class PlayerController : MonoBehaviour
         }
 
         if (selectedCursable != null && selectedSpell != null)
-            playerState.TryRepair(selectedSpell, selectedCursable.GetRepairable());
+            if(playerState.TryRepair(selectedSpell, selectedCursable.GetRepairable()))
+                Debug.Log("yay?");
     }
 
     public static void SubscribeToOnClick(Action<Vector2> callback)

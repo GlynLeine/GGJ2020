@@ -97,9 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 6722508327617600218}
-  OnRepair:
-    m_PersistentCalls:
-      m_Calls: []
+  keyWord: Hilt
 --- !u!60 &3425595208654651901
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -251,9 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 6722508327617600218}
-  OnRepair:
-    m_PersistentCalls:
-      m_Calls: []
+  keyWord: Guard
 --- !u!60 &740709666321667866
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -359,6 +355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9354c832c59654094b0660948e5e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursables:
+  - {fileID: 4251062072071972995}
+  - {fileID: 6951735921507686997}
+  - {fileID: 8828122593523852634}
+  keyWord: Sword
 --- !u!114 &2339410296118098841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,20 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curse: {fileID: 0}
   repairable: {fileID: 6722508327617600218}
-  OnRepair:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8898658198756108506}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  keyWord: Blade
 --- !u!60 &2626384257544324019
 PolygonCollider2D:
   m_ObjectHideFlags: 0

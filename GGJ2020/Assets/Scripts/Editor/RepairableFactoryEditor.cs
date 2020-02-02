@@ -16,6 +16,7 @@ public class RepairableFactoryEditor : Editor
             factory = target as RepairableFactory;
         DrawDefaultInspector();
 
+        EditorGUI.BeginChangeCheck();
         for (int i = 0; i < factory.keys.Count; i++)
         {
             EditorGUILayout.LabelField("item " + i.ToString());
@@ -25,8 +26,9 @@ public class RepairableFactoryEditor : Editor
                 factory.repairables.Add(null);
             factory.repairables[i] = EditorGUILayout.ObjectField("Value", factory.repairables[i], typeof(Repairable), false) as Repairable;
             EditorGUI.indentLevel--;
-
         }
+        if(EditorGUI.EndChangeCheck())
+            EditorUtility.SetDirty(target);
 
         EditorGUILayout.LabelField("");
 
@@ -37,6 +39,7 @@ public class RepairableFactoryEditor : Editor
             factory.keys.Add(keyToAdd);
             keyToAdd = "";
             factory.repairables.Add(null);
+            EditorUtility.SetDirty(target);
         }
         if(GUILayout.Button("RemoveItem"))
         {
@@ -46,6 +49,7 @@ public class RepairableFactoryEditor : Editor
                 factory.keys.RemoveAt(index);
                 factory.repairables.RemoveAt(index);
                 keyToAdd = "";
+                EditorUtility.SetDirty(target);
             }
         }
     }

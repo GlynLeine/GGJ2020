@@ -4,6 +4,8 @@ class Desk : MonoBehaviour
 {
     [SerializeField]
     private FactoryDatabase database;
+    [SerializeField]
+    private InstructionBook instructionBook;
 
     private Repairable currentRepairable;
     private RepairableFactory repairableFactory;
@@ -21,7 +23,7 @@ class Desk : MonoBehaviour
         if (currentRepairable != null)
             Destroy(currentRepairable);
 
-        currentRepairable = repairableFactory.GetRepairable();
+        currentRepairable = repairableFactory.GetRepairable(instructionBook);
         currentRepairable.SubscribeToOnRepair(OnRepair);
     }
 }
