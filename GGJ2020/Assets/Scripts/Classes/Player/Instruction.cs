@@ -53,9 +53,6 @@ public class Instruction
         valid = valid && spell.GetKeyWord() == valSpell.GetKeyWord();
         valid = valid && repairable.GetKeyWord() == valRepairable.GetKeyWord();
 
-        if (!valid)
-            return false;
-
         for (int i = 0; i < valCurses.Count; i++)
         {
             valid = valid && curses[i].Item1.GetKeyWord() == valCurses[i].Item1.GetKeyWord();

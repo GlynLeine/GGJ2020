@@ -16,9 +16,9 @@ public class Page : MonoBehaviour
     private void Update()
     {
         if (pageNumber + index < instructionBook.GetPageCount())
-            text.text = instructionBook.GetInstruction(pageNumber + index).GetText();
+            text.text = instructionBook.GetInstruction(pageNumber + index).GetText() + "\n\n\t" + (pageNumber + index + 1);
         else
-            text.text = "";
+            text.text = "\n\t" + (pageNumber + index + 1);
     }
 
     // Update is called once per frame
