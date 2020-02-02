@@ -28,7 +28,7 @@ public class Cursable : MonoBehaviour
         return curse;
     }
 
-    public string GetKeyString()
+    public string GetKeyWord()
     {
         return keyWord;
     }
