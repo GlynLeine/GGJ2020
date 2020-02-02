@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Repairable : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Repairable : MonoBehaviour
     private Action<Repairable> onRepair;
     [SerializeField]
     private List<Cursable> cursables;
+
+    public UnityEvent repaired;
 
     [SerializeField]
     private SpriteRenderer renderer;
@@ -26,6 +29,8 @@ public class Repairable : MonoBehaviour
         foreach (Cursable cursable in cursables)
             cursable.Repair();
 
+        repaired?.Invoke();
+
         StartCoroutine(RepairCoRoutine());
     }
 
@@ -36,7 +41,7 @@ public class Repairable : MonoBehaviour
         for (int i = 0; i < 12; i++)
         {
             renderer.material.SetInt("_tile", i);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         onRepair?.Invoke(this);
