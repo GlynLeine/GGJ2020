@@ -11,17 +11,22 @@ public class Page : MonoBehaviour
     public InstructionBook instructionBook;
     public TextMeshProUGUI text;
 
+    public int index;
+
     private void Update()
     {
-        text.text = instructionBook.GetInstruction(pageNumber).GetText();
+        if (pageNumber + index < instructionBook.GetPageCount())
+            text.text = instructionBook.GetInstruction(pageNumber + index).GetText();
+        else
+            text.text = "";
     }
 
     // Update is called once per frame
     public void NextPage()
     {
         pageNumber++;
-        if(pageNumber >= instructionBook.GetPageCount())
-            pageNumber = instructionBook.GetPageCount() -1;
+        if (pageNumber >= instructionBook.GetPageCount())
+            pageNumber = instructionBook.GetPageCount() - 1;
     }
 
 

@@ -11,6 +11,11 @@ public class Wallet : MonoBehaviour
         income = 0;
     }
 
+    public int GetIncome()
+    {
+        return income;
+    }
+
     public void AddFunds(int amount)
     {
         income += amount;
