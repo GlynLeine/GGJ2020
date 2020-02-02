@@ -424,7 +424,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   renderer: {fileID: 4581275326926330255}
-  keyWord: Sword
+  keyWord: SWORD
 --- !u!114 &2339410296118098841
 MonoBehaviour:
   m_ObjectHideFlags: 0

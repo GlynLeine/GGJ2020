@@ -16,8 +16,8 @@ public class InstructionBook : MonoBehaviour
         instructions = new List<Instruction>();
         instructionFactory = factoryDatabase.GetInstructionFactory();
 
-        for (int i = 0; i < 10; i++)
-            AddInstruction(1);  
+        for (int i = 0; i < 5; i++)
+            AddInstruction(3);  
     }
 
     public void AddInstruction(int curseCount)

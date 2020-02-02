@@ -15,12 +15,18 @@ class PlayerController : MonoBehaviour
         return selectedSpell;
     }
 
+    static PlayerController playerController;
+
     private void Start()
     {
-        if (FindObjectsOfType<PlayerController>().Length > 1)
+        if (playerController == null)
+        {
+            playerController = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
             DestroyImmediate(gameObject);
 
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

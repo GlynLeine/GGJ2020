@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EndOfDay : MonoBehaviour
 {
-    GameObject player;
     Wallet wallet;
 
     [SerializeField]
@@ -23,8 +22,7 @@ public class EndOfDay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        wallet = player.GetComponent<Wallet>();
+        wallet = FindObjectOfType<Wallet>();
 
         for(int i = 0; i < 3; i++)
         {
